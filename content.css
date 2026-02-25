@@ -1,0 +1,340 @@
+/* DarkerNews — Dark mode for Hacker News. Color palette from junesyi.dev. */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Lora:wght@400;600;700&display=swap');
+
+:root {
+  --dn-bg: #1a1b26;
+  --dn-bg-surface: #1e1f2b;
+  --dn-text: #a9b1d6;
+  --dn-heading: #c0caf5;
+  --dn-link: #7aa2f7;
+  --dn-hover: #bb9af7;
+  --dn-secondary: #9699a3;
+  --dn-border: #414868;
+  --dn-surface: #282c34;
+  --dn-accent: #ff9e64;
+  --dn-header-bg: #24283b;
+}
+
+/* Base */
+
+html,
+body {
+  background-color: var(--dn-bg) !important;
+  color: var(--dn-text) !important;
+  font-family: 'Nunito', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  min-height: 100%;
+}
+
+/* Main layout */
+
+#hnmain {
+  background-color: var(--dn-bg) !important;
+}
+
+td[bgcolor],
+tr[bgcolor],
+table[bgcolor] {
+  background-color: var(--dn-bg) !important;
+}
+
+table {
+  background-color: transparent !important;
+}
+
+/* Header */
+
+#hnmain>tbody>tr:first-child>td,
+#hnmain>tbody>tr:first-child>td table,
+#hnmain>tbody>tr:first-child>td td {
+  background-color: var(--dn-header-bg) !important;
+}
+
+#hnmain>tbody>tr:first-child>td {
+  border-bottom: 1px solid var(--dn-border);
+}
+
+#hnmain>tbody>tr:first-child a {
+  color: var(--dn-heading) !important;
+}
+
+#hnmain>tbody>tr:first-child a:hover {
+  color: var(--dn-hover) !important;
+}
+
+#hnmain>tbody>tr:first-child span.pagetop {
+  color: var(--dn-secondary) !important;
+}
+
+#hnmain>tbody>tr:first-child span.pagetop b,
+#hnmain>tbody>tr:first-child .hnname a {
+  color: var(--dn-heading) !important;
+  font-weight: 700;
+}
+
+#hnmain>tbody>tr:first-child span.pagetop a#me {
+  color: var(--dn-link) !important;
+}
+
+#hnmain>tbody>tr:first-child a[href="http://www.ycombinator.com"],
+#hnmain>tbody>tr:first-child a[href="https://www.ycombinator.com"] {
+  border: 2px solid var(--dn-border) !important;
+}
+
+#hnmain>tbody>tr:first-child img[src="y18.svg"],
+#hnmain>tbody>tr:first-child img[src="/y18.svg"] {
+  filter: brightness(0.85);
+}
+
+/* Story list */
+
+.rank {
+  color: var(--dn-secondary) !important;
+}
+
+.titleline a {
+  color: var(--dn-heading) !important;
+  font-family: 'Nunito', system-ui, sans-serif !important;
+}
+
+.titleline a:visited {
+  color: #6b7394 !important;
+}
+
+.titleline a:hover {
+  color: var(--dn-link) !important;
+}
+
+.titleline .sitebit a,
+.titleline .sitestr {
+  color: var(--dn-secondary) !important;
+}
+
+.titleline .sitebit a:hover {
+  color: var(--dn-link) !important;
+}
+
+.subtext {
+  color: var(--dn-secondary) !important;
+}
+
+.subtext a {
+  color: var(--dn-secondary) !important;
+}
+
+.subtext a:hover {
+  color: var(--dn-link) !important;
+}
+
+.score {
+  color: var(--dn-accent) !important;
+}
+
+/* Vote arrows */
+
+.votearrow {
+  filter: hue-rotate(200deg) saturate(0.6) brightness(1.2);
+}
+
+.nosee {
+  visibility: hidden;
+}
+
+/* Spacers */
+
+tr.spacer,
+tr.spacer td {
+  background-color: var(--dn-bg) !important;
+}
+
+/* Comments */
+
+.commtext {
+  color: var(--dn-text) !important;
+  font-family: 'Nunito', system-ui, sans-serif !important;
+  line-height: 1.6;
+}
+
+.commtext a {
+  color: var(--dn-link) !important;
+}
+
+.commtext a:hover {
+  color: var(--dn-hover) !important;
+}
+
+.commtext pre,
+.commtext code {
+  background-color: var(--dn-surface) !important;
+  color: var(--dn-accent) !important;
+  border: 1px solid var(--dn-border);
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+.commtext pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+}
+
+.comhead,
+.comhead a {
+  color: var(--dn-secondary) !important;
+}
+
+.comhead a:hover {
+  color: var(--dn-link) !important;
+}
+
+.comhead a.hnuser {
+  color: var(--dn-link) !important;
+}
+
+a.togg {
+  color: var(--dn-secondary) !important;
+}
+
+a.togg:hover {
+  color: var(--dn-link) !important;
+}
+
+.comment.noshow {
+  display: none;
+}
+
+img.ind {
+  opacity: 0;
+}
+
+/* Item page */
+
+.fatitem .titleline a {
+  color: var(--dn-heading) !important;
+  font-size: inherit;
+}
+
+.fatitem .subtext {
+  color: var(--dn-secondary) !important;
+}
+
+.toptext {
+  color: var(--dn-text) !important;
+}
+
+.toptext a {
+  color: var(--dn-link) !important;
+}
+
+/* Forms */
+
+input,
+textarea,
+select {
+  background-color: var(--dn-surface) !important;
+  color: var(--dn-text) !important;
+  border: 1px solid var(--dn-border) !important;
+  border-radius: 4px !important;
+  font-family: 'Nunito', system-ui, sans-serif !important;
+  padding: 6px 8px !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--dn-link) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(122, 162, 247, 0.2) !important;
+}
+
+input[type="submit"] {
+  background-color: var(--dn-header-bg) !important;
+  color: var(--dn-heading) !important;
+  cursor: pointer;
+  font-weight: 600 !important;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--dn-surface) !important;
+}
+
+/* Pagination */
+
+a.morelink {
+  color: var(--dn-link) !important;
+  font-weight: 600;
+}
+
+a.morelink:hover {
+  color: var(--dn-hover) !important;
+}
+
+/* Footer */
+
+#hnmain>tbody>tr:last-child td {
+  background-color: var(--dn-bg) !important;
+}
+
+.yclinks,
+.yclinks a {
+  color: var(--dn-secondary) !important;
+}
+
+.yclinks a:hover {
+  color: var(--dn-link) !important;
+}
+
+#hnmain>tbody>tr:last-child img[src="s.gif"] {
+  background-color: var(--dn-border) !important;
+}
+
+#hnmain>tbody>tr:last-child input[type="text"] {
+  background-color: var(--dn-surface) !important;
+  color: var(--dn-text) !important;
+  border: 1px solid var(--dn-border) !important;
+}
+
+/* Misc pages */
+
+td.default,
+td.comment,
+form table td {
+  color: var(--dn-text) !important;
+}
+
+.dead,
+.dead a {
+  color: #565a6e !important;
+}
+
+/* Polish */
+
+a {
+  transition: color 0.15s ease;
+}
+
+::selection {
+  background-color: rgba(122, 162, 247, 0.3);
+  color: var(--dn-heading);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dn-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dn-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dn-secondary);
+}
